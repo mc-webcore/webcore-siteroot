@@ -1,0 +1,6 @@
+﻿/*<!-- Setup overide css rules for correct view in cms Editor -->*/
+
+[data-aos^=fade][data-aos^=fade] {
+    opacity: 1!important; 
+    transition-property: opacity,transform;
+}

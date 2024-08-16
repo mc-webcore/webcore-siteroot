@@ -1,0 +1,878 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style media="all" type="text/css">
+
+        html, body {
+            
+        }
+        @media print {
+            body {
+                width: 21cm;
+                height: 29.7cm;
+                margin: 30mm 45mm 30mm 45mm;
+                /* change the margins as you want them to be. */
+            }
+        }
+        @page {
+            size: 21cm 29.7cm;
+            margin: 30mm 45mm 30mm 45mm;
+            /* change the margins as you want them to be. */
+        }
+
+
+        @font-face {
+            font-family: 'WebFont-Open Sans';
+            src:url('https://start.webcore.ws/fonts/open-sans/open-sans-v15-latin-regular.ttf') format('truetype'),
+                url('https://start.webcore.ws/fonts/open-sans/open-sans-v15-latin-regular.woff') format('woff'), 
+                url('https://start.webcore.ws/fonts/open-sans/open-sans-v15-latin-regular.woff2') format('woff2')
+               
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            src: url('https://start.webcore.ws/fonts/open-sans/open-sans-v15-latin-regular.ttf') format('truetype');
+        }
+        .pcs-template {
+            font-family: Arial,'Open Sans', Arial,'WebFont-Open Sans', Calibri, 'Trebuchet MS', sans-serif;
+            
+            font-size: 9pt;
+            color: #333333;
+            background: #ffffff;
+            margin-left: auto;
+            margin-right: auto;
+            height: 297mm;
+            width: 210mm;
+        }
+
+        .pcs-header-content {
+            font-size: 9pt;
+            color: #333333;
+            background-color: #ffffff;
+        }
+
+        .pcs-template-body {
+            padding: 0 0.400000in 0 0.550000in;
+        }
+
+        .pcs-template-footer {
+            height: 0.700000in;
+            font-size: 6pt;
+            color: #aaaaaa;
+            padding: 0 0.400000in 0 0.550000in;
+            background-color: #ffffff;
+        }
+
+        .pcs-footer-content {
+            word-wrap: break-word;
+            color: #aaaaaa;
+            border-top: 1px solid #adadad;
+        }
+
+        .pcs-label {
+            color: #333333;
+        }
+
+        .pcs-entity-title {
+            font-size: 28pt;
+            color: #000000;
+        }
+
+        .pcs-orgname {
+            font-size: 10pt;
+            color: #333333;
+        }
+
+        .pcs-customer-name {
+            font-size: 9pt;
+            color: #333333;
+        }
+
+        .pcs-eori-number {
+            color: #333;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        .pcs-itemtable-header {
+            font-size: 9pt;
+            color: #ffffff;
+            background-color: #3c3d3a;
+        }
+
+        .pcs-itemtable-breakword {
+            word-wrap: break-word;
+        }
+
+        .pcs-taxtable-header {
+            font-size: 9pt;
+            color: #ffffff;
+            background-color: #3c3d3a;
+        }
+
+        .breakrow-inside {
+            page-break-inside: avoid;
+        }
+
+        .breakrow-after {
+            page-break-after: auto;
+        }
+
+        .pcs-item-row {
+            font-size: 9pt;
+            border-bottom: 1px solid #adadad;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .pcs-img-fit-aspectratio {
+            object-fit: contain;
+            object-position: top;
+        }
+
+        .pcs-img-border {
+            border: 1px solid #f5f4f3;
+        }
+
+        .pcs-item-sku, .pcs-item-hsn, .pcs-item-coupon, .pcs-item-serialnumber, .pcs-item-unitcode {
+            margin-top: 2px;
+            font-size: 10px;
+            color: #444444;
+        }
+
+        .pcs-item-desc {
+            color: #333333;
+            font-size: 8pt;
+        }
+
+        .pcs-balance {
+            background-color: #f5f4f3;
+            font-size: 9pt;
+            color: #000000;
+        }
+
+        .pcs-savings {
+            font-size: 0pt;
+            color:;
+            background-color:;
+        }
+
+        .pcs-totals {
+            font-size: 9pt;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        .pcs-notes {
+            font-size: 8pt;
+        }
+
+        .pcs-terms {
+            font-size: 8pt;
+        }
+
+        .pcs-header-first {
+            background-color: #ffffff;
+            font-size: 9pt;
+            color: #333333;
+            height: auto;
+        }
+
+        .pcs-status {
+            color:;
+            font-size: 15pt;
+            border: 3px solid;
+            padding: 3px 8px;
+        }
+
+        .billto-section {
+            padding-top: 0mm;
+            padding-left: 0mm;
+        }
+
+        .shipto-section {
+            padding-top: 0mm;
+            padding-left: 0mm;
+        }
+
+        @page :first {
+            @top-center {
+                content: element(header);
+            }
+
+            margin-top: 0.700000in;
+        }
+
+        .pcs-template-header {
+            padding: 0 0.400000in 0 0.550000in;
+            height: 0.700000in;
+        }
+
+        .pcs-template-fill-emptydiv {
+            display: table-cell;
+            content: " ";
+            width: 100%;
+        }
+
+
+        /* Additional styles for RTL compat */
+
+        /* Helper Classes */
+
+        .inline {
+            display: inline-block;
+        }
+
+        .v-top {
+            vertical-align: top;
+        }
+
+        .text-align-right {
+            text-align: right;
+        }
+
+        .rtl .text-align-right {
+            text-align: left;
+        }
+
+        .text-align-left {
+            text-align: left;
+        }
+
+        .rtl .text-align-left {
+            text-align: right;
+        }
+
+        .float-section-right {
+            float: right;
+        }
+
+        .rtl .float-section-right {
+            float: left;
+        }
+
+        .float-section-left {
+            float: left;
+        }
+
+        .rtl .float-section-left {
+            float: right;
+        }
+
+        /* Helper Classes End */
+
+        .item-details-inline {
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: top;
+            max-width: 70%;
+        }
+
+        .total-in-words-container {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .total-in-words-label {
+            vertical-align: top;
+            padding: 0 10px;
+        }
+
+        .total-in-words-value {
+            width: 170px;
+        }
+
+        .total-section-label {
+            padding: 5px 10px 5px 0;
+            vertical-align: middle;
+        }
+
+        .total-section-value {
+            width: 120px;
+            vertical-align: middle;
+            padding: 10px 10px 10px 5px;
+        }
+
+        .rtl .total-section-value {
+            padding: 10px 5px 10px 10px;
+        }
+
+        .tax-summary-description {
+            color: #727272;
+            font-size: 8pt;
+        }
+
+        .bharatqr-bg {
+            background-color: #f4f3f8;
+        }
+
+        /* Overrides/Patches for RTL compat */
+        .rtl th {
+            text-align: inherit; /* Specifically setting th as inherit for supporting RTL */
+        }
+        /* Overrides/Patches End */
+
+
+        /* Subject field styles */
+        .subject-block {
+            margin-top: 20px;
+        }
+
+        .subject-block-value {
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            line-height: 14pt;
+            margin-top: 5px;
+        }
+        /* Subject field styles End*/
+
+        .pcs-sub-label {
+            color: #666;
+            font-size: 10px;
+        }
+
+        .pcs-hsnsummary-compact {
+            padding: 0;
+            margin-top: 3px;
+        }
+
+        .pcs-hsnsummary-label-compact {
+            margin-bottom: 3px;
+            font-weight: 600;
+            padding-left: 3px;
+            font-size: 9pt;
+        }
+
+        .pcs-hsnsummary-header-compact {
+            text-align: right;
+            padding: 5px 7px 2px 7px;
+            word-wrap: break-word;
+            width: 17%;
+            height: 32px;
+            border-right: 1px solid #9E9E9E;
+            font-size: 8pt;
+            font-weight: 600;
+        }
+
+        .pcs-hsnsummary-body-compact, .pcs-hsnsummary-total-compact {
+            text-align: right;
+            word-wrap: break-word;
+            font-size: 7pt;
+            padding: 4px 10px;
+        }
+
+        .pcs-hsnsummary-total-compact {
+            border-top: 1px solid #adadad;
+        }
+
+        .pcs-ukvat-summary {
+            margin-top: 50px;
+            clear: both;
+            width: 100%;
+        }
+
+        .pcs-ukvat-summary-header {
+            padding: 5px 10px 5px 5px;
+        }
+
+            .pcs-ukvat-summary-header:first-child {
+                padding-left: 10px;
+            }
+
+        .pcs-ukvat-summary-label {
+            font-size: 10pt;
+        }
+
+        .pcs-ukvat-summary-table {
+            margin-top: 10px;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .pcs-ukvat-summary-body, .pcs-ukvat-summary-total {
+            padding: 10px 10px 5px 10px;
+        }
+
+            .pcs-ukvat-summary-body:first-child {
+                padding-bottom: 10px;
+                padding-right: 0;
+            }
+
+        .pcs-payment-block {
+            margin-top: 20px;
+        }
+
+        .pcs-payment-block-inner {
+            margin-top: 10px;
+        }
+
+        .pcs-entity-label-section {
+            padding: 5px 10px 5px 0px;
+            font-size: 10pt;
+        }
+
+        .pcs-colon {
+            width: 3%;
+        }
+
+
+
+
+
+        .pcs-w-100 {
+            width: 100%;
+        }
+
+
+
+
+
+
+
+        .pcs-d-table-cell {
+            display: table-cell;
+        }
+
+
+
+
+
+        .pcs-talign-center {
+            text-align: center;
+        }
+
+        .pcs-wordwrap-bw {
+            word-wrap: break-word;
+        }
+
+        .pcs-whitespace-pw {
+            white-space: pre-wrap;
+        }
+
+        .pcs-fw-600 {
+            font-weight: 600;
+        }
+
+        .pcs-text-uppercase {
+            text-transform: uppercase;
+        }
+
+
+
+
+
+        .pcs-table-fixed {
+            table-layout: fixed;
+        }
+
+
+
+
+
+        .pcs-valign-middle {
+            vertical-align: middle;
+        }
+
+
+
+        .pcs-clearfix {
+            clear: both;
+        }
+
+        .lineitem-header {
+            padding: 5px 10px 5px 5px;
+            word-wrap: break-word;
+        }
+
+        .rtl .lineitem-header {
+            padding: 5px 5px 5px 10px;
+        }
+
+        .lineitem-column {
+            padding: 10px 10px 5px 10px;
+            word-wrap: break-word;
+            vertical-align: top;
+        }
+
+        .lineitem-content-right {
+            padding: 10px 10px 10px 5px;
+        }
+
+        .rtl .lineitem-content-right {
+            padding: 10px 5px 10px 10px;
+        }
+
+        .total-number-section {
+            width: 45%;
+            padding: 10px 10px 3px 3px;
+            font-size: 9pt;
+            float: left;
+        }
+
+        .rtl .total-number-section {
+            float: right;
+        }
+
+        .total-section {
+            width: 50%;
+            float: right;
+        }
+
+        .rtl .total-section {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="pcs-template ">
+        <div class="pcs-template-header pcs-header-content" id="header">
+
+
+
+            <div class="pcs-template-fill-emptydiv"></div>
+
+        </div>
+
+        <div class="pcs-template-body">
+            <table style="width:100%;table-layout: fixed;">
+                <tbody>
+                    <tr>
+                        <td style="vertical-align: top; width:50%;">
+                            <div>
+                                <img src="/img/nucleus-logo.jpg" style="width: 240px; height: 38.34px; position: relative; left: -10px;" id="logo_content">
+                            </div>
+                            <span class="pcs-orgname"><b>Nucleus Solutions LLC</b></span><br>
+                            <span class="pcs-label">
+                                <span style="white-space: pre-line;word-wrap: break-word;" id="tmp_org_address">
+                                    3301 Chetumal Street
+                                    Belize City Belize                                    
+                                    support@webcore.ws
+                                </span>
+                            </span>
+                        </td>
+                        <td style="width:50%;" class="text-align-right v-top">
+
+                            <span class="pcs-entity-title">Invoice</span><br>
+                            <span id="tmp_entity_number" style="font-size: 10pt;" class="pcs-label"><b># INV-17</b></span>
+
+                            <div style="clear:both;margin-top:20px;">
+                                <span style="font-size:8pt;"><b>Balance Due</b></span><br>
+                                <span style="font-size:12pt;"><b>€562,75</b></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table style="clear:both;width:100%;margin-top:30px;table-layout:fixed;">
+                <tbody>
+                    <tr>
+                        <td style="width:60%;vertical-align:bottom;word-wrap: break-word;">
+                            <div class="billto-section">
+                                <label style="font-size: 10pt;" class="pcs-label" id="tmp_billing_address_label">Bill To</label>
+                                <br>
+                                <span style="white-space: pre-line;" id="tmp_billing_address">
+                                    <strong><span class="pcs-customer-name" id="zb-pdf-customer-detail">Rob &amp; Joe Traders</span></strong>
+                                    4141 Hacienda Drive
+                                    Pleasanton
+                                    94588 CA
+                                    USA
+                                </span>
+                            </div>
+                        </td>
+                        <td align="right" style="vertical-align:bottom;width: 40%;">
+                            <table style="float:right;width: 100%;table-layout: fixed;word-wrap: break-word;" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:5px 10px 5px 0px;font-size:10pt;" class="text-align-right">
+                                            <span class="pcs-label">Invoice Date :</span>
+                                        </td>
+                                        <td class="text-align-right">
+                                            <span id="tmp_entity_date">29 Oct 2023</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:5px 10px 5px 0px;font-size: 10pt;" class="text-align-right">
+                                            <span class="pcs-label">Terms :</span>
+                                        </td>
+                                        <td class="text-align-right">
+                                            <span id="tmp_payment_terms">Due On Receipt</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:5px 10px 5px 0px;font-size: 10pt;" class="text-align-right">
+                                            <span class="pcs-label">Due Date :</span>
+                                        </td>
+                                        <td class="text-align-right">
+                                            <span id="tmp_due_date">29 Oct 2023</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:5px 10px 5px 0px;font-size: 10pt;" class="text-align-right">
+                                            <span class="pcs-label">P.O.# :</span>
+                                        </td>
+                                        <td class="text-align-right">
+                                            <span id="tmp_ref_number">SO-17</span>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="subject_field" class="subject-block">
+                <div id="tmp_subject_label" class="pcs-label subject-block-label">Subject :</div>
+                <div class="subject-block-value">Description</div>
+            </div>
+
+
+            <table style="width:100%;margin-top:20px;table-layout:fixed;" class="pcs-itemtable" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr style="height:32px;">
+                        <td style="padding: 5px 0px 5px 5px;width: 5%;text-align: center;" id="" class="pcs-itemtable-header pcs-itemtable-breakword">
+                            #
+                        </td>
+                        <td style="padding: 5px 10px 5px 20px;width: ;text-align: left;" id="" class="pcs-itemtable-header pcs-itemtable-breakword">
+                            Item &amp; Description
+                        </td>
+                        <td style="padding: 5px 10px 5px 5px;width: 11%;text-align: right;" id="" class="pcs-itemtable-header pcs-itemtable-breakword">
+                            Qty
+                        </td>
+                        <td style="padding: 5px 10px 5px 5px;width: 11%;text-align: right;" id="" class="pcs-itemtable-header pcs-itemtable-breakword">
+                            Rate
+                        </td>
+                        <td style="padding: 5px 10px 5px 5px;width: 11%;text-align: right;" id="" class="pcs-itemtable-header pcs-itemtable-breakword">
+                            
+                        </td>
+                        <td style="padding: 5px 10px 5px 5px;width: 15%;text-align: right;" id="" class="pcs-itemtable-header pcs-itemtable-breakword">
+                            Amount
+                        </td>
+
+                    </tr>
+                </thead>
+                <tbody class="itemBody">
+                    <tr class="breakrow-inside breakrow-after">
+                        <td rowspan="1" valign="top" style="padding: 10px 0 10px 5px;text-align: center;word-wrap: break-word;" class="pcs-item-row">
+                            1
+                        </td>
+                        <td rowspan="1" valign="top" style="padding: 10px 0px 10px 20px;" class="pcs-item-row">
+                            <div>
+                                <div>
+
+                                    <span style="word-wrap: break-word;" id="tmp_item_name">Brochure Design</span><br>
+
+                                    <span style="white-space: pre-wrap;word-wrap: break-word;" class="pcs-item-desc" id="tmp_item_description">Brochure Design Single Sided Color</span>
+
+
+                                </div>
+                            </div>
+                        </td>
+
+
+
+
+
+
+
+
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right">
+                            <span id="tmp_item_qty">1,00</span>
+                            <div class="pcs-item-desc">Nos</div>
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right">
+                            <span id="tmp_item_rate">300,00</span>
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right" id="tmp_item_discount">
+                         
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column lineitem-content-right text-align-right">
+                            <span id="tmp_item_amount">300,00</span>
+                        </td>
+                    </tr>
+                    <tr class="breakrow-inside breakrow-after">
+                        <td rowspan="1" valign="top" style="padding: 10px 0 10px 5px;text-align: center;word-wrap: break-word;" class="pcs-item-row">
+                            2
+                        </td>
+                        <td rowspan="1" valign="top" style="padding: 10px 0px 10px 20px;" class="pcs-item-row">
+                            <div>
+                                <div>
+
+                                    <span style="word-wrap: break-word;" id="tmp_item_name">Web Design Packages(Template) - Basic</span><br>
+
+                                    <span style="white-space: pre-wrap;word-wrap: break-word;" class="pcs-item-desc" id="tmp_item_description">Custom Themes for your business. Inclusive of 10 hours of marketing and annual training</span>
+
+
+                                </div>
+                            </div>
+                        </td>
+
+
+
+
+
+
+
+
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right">
+                            <span id="tmp_item_qty">1,00</span>
+                            <div class="pcs-item-desc">Nos</div>
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right">
+                            <span id="tmp_item_rate">250,00</span>
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right" id="tmp_item_discount">
+                            0.00
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column lineitem-content-right text-align-right">
+                            <span id="tmp_item_amount">250,00</span>
+                        </td>
+                    </tr>
+                    <tr class="breakrow-inside breakrow-after">
+                        <td rowspan="1" valign="top" style="padding: 10px 0 10px 5px;text-align: center;word-wrap: break-word;" class="pcs-item-row">
+                            3
+                        </td>
+                        <td rowspan="1" valign="top" style="padding: 10px 0px 10px 20px;" class="pcs-item-row">
+                            <div>
+                                <div>
+
+                                    <span style="word-wrap: break-word;" id="tmp_item_name">Print Ad - Basic - Color</span><br>
+
+                                    <span style="white-space: pre-wrap;word-wrap: break-word;" class="pcs-item-desc" id="tmp_item_description">Print Ad 1/8 size Color</span>
+
+
+                                </div>
+                            </div>
+                        </td>
+
+
+
+
+
+
+
+
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right">
+                            <span id="tmp_item_qty">1,00</span>
+                            <div class="pcs-item-desc">Nos</div>
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right">
+                            <span id="tmp_item_rate">80,00</span>
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column text-align-right" id="tmp_item_discount">
+                            
+                        </td>
+                        <td rowspan="1" class="pcs-item-row lineitem-column lineitem-content-right text-align-right">
+                            <span id="tmp_item_amount">80,00</span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div style="width: 100%;margin-top: 1px;">
+                <div class="v-top total-number-section">
+                    <div style="white-space: pre-wrap;"></div>
+
+                </div>
+                <div class="v-top total-section">
+                    <table class="pcs-totals" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <td class="total-section-label text-align-right">Sub Total</td>
+                                <td id="tmp_subtotal" class="total-section-value text-align-right">630.00</td>
+                            </tr>
+
+
+
+
+                            <tr style="height:10px;">
+                                <td class="total-section-label text-align-right">Sample Tax1 (4.70%)  </td>
+                                <td class="total-section-value text-align-right">11,75</td>
+                            </tr>
+                            <tr style="height:10px;">
+                                <td class="total-section-label text-align-right">Sample Tax2 (7.00%)  </td>
+                                <td class="total-section-value text-align-right">21,00</td>
+                            </tr>
+
+
+
+
+
+
+                            <tr>
+                                <td class="total-section-label text-align-right"><b>Total</b></td>
+                                <td id="tmp_total" class="total-section-value text-align-right"><b>€662.75</b></td>
+                            </tr>
+
+
+                            <tr style="height:10px;">
+                                <td class="total-section-label text-align-right">Payment Made</td>
+                                <td style="color: red;" class="total-section-value text-align-right">(-) 100,00</td>
+                            </tr>
+
+                            <tr style="height:40px;" class="pcs-balance">
+                                <td class="total-section-label text-align-right"><b>Balance Due</b></td>
+                                <td id="tmp_balance_due" class="total-section-value text-align-right"><b>€562,75</b></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+
+
+
+
+
+
+            <div style="clear:both;margin-top:50px;width:100%;">
+                <label style="font-size: 10pt;" id="tmp_notes_label" class="pcs-label">Notes</label><br>
+                <p style="margin-top:7px;white-space: pre-wrap;word-wrap: break-word;" class="pcs-notes">Thanks for your business.</p>
+            </div>
+
+            <div class="pcs-payment-block">
+                <div class="pcs-payment-block-inner" style="page-break-inside:avoid;">
+                    <span style="padding-right:8px;display: inline-block;vertical-align: middle;" class="pcs-label">Payment Options</span>
+                <div>
+
+                </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div style="clear:both;margin-top:30px;width:100%;">
+                <label style="font-size: 10pt;" id="tmp_terms_label" class="pcs-label">Terms &amp; Conditions</label><br>
+                <p style="margin-top:7px;white-space: pre-wrap;word-wrap: break-word;" class="pcs-terms">
+                Your company's Terms and Conditions will be displayed here. You can add it in the Invoice Preferences page under Settings.</p>
+            </div>
+
+            <div style="page-break-inside: avoid;">
+            </div>
+
+
+
+
+        </div>
+
+        <div class="pcs-template-footer">
+            <div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

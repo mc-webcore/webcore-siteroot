@@ -1,0 +1,222 @@
+﻿@using WebCoreBase.CustomExtensions
+@model G4CMSLib.Model.CMSPageView
+
+@{
+    ViewBag.title = Model.PageContent.title;
+    ViewBag.subtitle = Model.PageContent.subtitle;
+    ViewBag.navgroup = Model.NavigationGroup;
+    ViewBag.navtitle = Model.NavigationGroupTitle;
+    ViewBag.uniqueId = Model.PageContent.unique_id;
+    ViewBag.revision = Model.PageContent.revision;
+
+
+
+}
+
+
+@section title{
+    <title>
+        @Html.Raw(Model.PageContent.title) -
+        @Html.Raw(Model.PageContent.subtitle)
+    </title>
+
+}
+
+
+@section meta{
+
+    @if (!Model.PageContent.textSearch.IsEmpty())
+    {
+        <meta name="description" content="@Model.PageContent.textSearch" />
+
+    }
+    @if (!Model.PageContent.tags.IsEmpty())
+    {
+        <meta name="keywords" content="@Model.PageContent.tags" />
+
+    }
+    @Html.Raw(Model.PageContent.metaTags)
+}
+
+
+
+@Html.Raw(Model.PageContent.htmcontent)
+
+<input id="country" name="country" type="hidden" value="@Model.PageContent.country" />
+<input id="pgiid" name="pgiid" type="hidden" value="@Model.PageContent.unique_id.ToString()" />
+<input id="piid" name="piid" type="hidden" value="@Model.PageContent.id.ToString()" />
+
+@section navigation{
+
+    @if (Model.NavigationGroup != "none")
+    {
+        @Html.Partial(Model.viewPath + "leftnav-docs/_navleftmenu.cshtml", Model)
+    }
+
+
+
+}
+
+@section styles{
+    @Html.Raw(Model.LayoutCssInclude)
+
+    <stylessection>
+        @Html.Raw(Model.PageCssInclude)
+
+    </stylessection>
+}
+
+@section scripts{
+
+    <script>
+        var host = '@Model.Host';
+        var cmxhost = '@Model.CMXHost';
+    </script>
+    @Html.Raw(Model.LayoutJssInclude)
+    @Html.Raw(Model.PageJsInclude)
+
+}
+
+
+
+@section LastUpdate {
+    <div id="updpn">
+
+        @if (Model.PageContent.Username != null)
+        {
+            string dt = Model.PageContent.LastUpdateDate.ToString("dd MMM yyyy HH:mm");
+
+            <span id="updt" class="smx">Last Updated: @dt  </span>
+            @*<div id="lu-usrnm" class="smx userup" title="@Model.PageContent.Username"> @Model.PageContent.LastUpdatedBy</div>*@
+
+
+        }
+    </div>
+}
+
+@section Revision {
+
+
+    @if (Model.PageContent.revision != null && Model.PageContent.revision != "")
+    {
+
+        <div id="docver">
+            <ul class="wc-dropdown nocaret">
+
+                <li>
+                    <a class="caret"><i class="fa fa-caret-down"></i></a>
+                    <span id="revtitle" class="lab"> @Model.PageContent.revision</span>
+
+
+                    <ul id="revlst" class="wc-dropdown-menu wc-mt-5">
+                        <li>
+                            <a> <i class="far fa-bookmark"></i> @Model.PageContent.revision</a>
+                        </li>
+
+                    </ul>
+
+
+                </li>
+
+
+            </ul>
+        </div>
+
+    }
+    else
+    {
+        <div id="docver">
+            <ul class="wc-dropdown nocaret">
+                <li>
+                    <a class="caret"><i class="fa fa-caret-down"></i></a>
+                    <span id="revtitle" class="lab">v @Model.PageContent.version.ToString("#0.0") </span>
+
+                    <ul id="revlst" class="wc-dropdown-menu wc-mt-5 hide">
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+    }
+
+
+}
+
+
+@section Searchbar {
+    <div id="navtop" class="nomove">
+        <ul class="nav navbar-nav nav-right wc-dropdown  navfnt">
+            @if (Model.SubscriberLevel.AllowSearch == 1)
+            {
+                <li class="srchbx">
+                    <div class="input-group">
+                        <input type="Search" id="srchtop" name="srchtop" placeholder="Search..." class="form-control" />
+                        <div class="input-group-btn">
+                            <button type="button" onclick="doSearch();" class="btn btn-light btn-mnu btn-addon">
+                                <i class="ti-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            }
+
+            @if (Model.SubscriberLevel.AllowViewSiteRole == 1)
+            {
+                <li class="usrtop">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="/myaccount">
+                            <div id="usrnm" class="smx userbloc d-inline-block" title="@User.Identity.Name">
+                                @User.Identity.Name.Initials()
+                            </div>
+
+                        </a>
+                        <ul id="topusrnav" class="wc-dropdown-menu">
+                            <li>
+                                <a href="@Model.Host/myaccount">
+                                    @User.Identity.Name
+                                </a>
+                            </li>
+                            <li>
+                                <form id="account" method="post" action="@Model.Host/Account/LogOff">
+                                    @Html.AntiForgeryToken()
+
+                                    <a href="#" tabindex="-1" onclick="logoff();">
+                                        <i class="ti-power-off fa-sm jstree-themeicon-custom" role="presentation"></i>  Logout
+                                    </a>
+
+                                </form>
+                            </li>
+                        </ul> }
+                    else
+                    {
+                        <div class="ptx-5">
+                            <a href="/account/login" class="pl-10 nocaret">
+                                <i class="fa fa-user-circle fa-2x fa-fw"></i>
+                            </a>
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+
+
+
+        @*<input type="Search" id="srchtop" name="srchtop" placeholder="Search..." class="form-control" />
+            <div class="input-group-btn">
+                <button type="button" onclick="doSearch();" class="btn btn-light btn-mnu btn-addon">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>*@
+    </div>
+
+}
+
+
+
+
+
+

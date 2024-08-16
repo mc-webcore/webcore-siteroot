@@ -1,0 +1,265 @@
+﻿
+@model G4CMSLib.Model.CMSPageView
+
+
+  @if(Model!=null)
+  {
+
+      string exp = "false";
+      string opn = "collapsed";
+      string hg = "";
+      string shw = "collapse";
+      string gl = "fa-angle-left";
+
+<ul class="side-menu">
+    @if(Model.SiteStructure!=null)
+    { 
+    foreach (G4CMSLib.Model.treeItem tr in Model.SiteStructure)
+    {
+        if (tr.selected == 1) { hg = "selrw"; } else { hg = ""; }
+
+        if (tr.childItems.Count > 0)
+        {
+
+            if (tr.type == 1) { exp = "true"; opn = ""; shw = "show"; gl = "fa-angle-down"; }
+            else { exp = "false"; opn = "collapsed"; shw = "collapse"; gl = "fa-angle-left"; }
+
+            <li class="@hg">
+                @if (tr.launch == "label")
+                {
+                    <a href="#@tr.id" class="colpn @opn" data-toggle="collapse"
+                       aria-expanded="@exp" data-target="#@tr.id" aria-controls="@tr.id">
+                        <i class="@tr.icon"></i> @tr.Name
+                        <div class="inline pull-right"><i id="@tr.id-ic" class="fa @gl"></i></div>
+                    </a>
+                }
+                else
+                {
+                    <a href="#@tr.id" class="colpn @opn" data-toggle="collapse"
+                       onclick="loadjsnm('@tr.virtualPath', NavPage, this,'@tr.launch');"
+                       aria-expanded="@exp" data-target="#@tr.id" aria-controls="@tr.id">
+                        <i class="@tr.icon"></i> @tr.Name
+                        <div class="inline pull-right"><i id="@tr.id-ic" class="fa @gl"></i></div>
+                    </a>
+                }
+
+            </li>
+
+             <li>
+                 <ul id="@tr.id" class="colpn side-menu wd100pc submenu @shw">
+
+                     @foreach (G4CMSLib.Model.treeItem tx in tr.childItems)
+                     {
+                         if (tx.selected == 1) { hg = "selrw"; } else { hg = ""; }
+
+
+                         if (tx.childItems.Count > 0)
+                         {
+
+                             //////
+
+                             if (tx.type == 1) { exp = "true"; opn = ""; shw = "show"; gl = "fa-angle-down"; }
+                             else { exp = "false"; opn = "collapsed"; shw = "collapse"; gl = "fa-angle-left"; }
+
+                             <li class="@hg">
+                                 @if (tx.launch == "label")
+                                 {
+                                     <a href="#@tx.id" class="colpn2 @opn" data-toggle="collapse"
+                                        aria-expanded="@exp" data-target="#@tx.id" aria-controls="@tx.id">
+                                         <i class="@tx.icon"></i> @tx.Name
+                                         <div class="inline pull-right"><i id="@tx.id-ic" class="fa @gl"></i></div>
+                                     </a>
+                                 }
+                                 else
+                                 {
+                                     <a href="#@tx.id" class="colpn2 @opn" data-toggle="collapse"
+                                        onclick="loadjsnm('@tx.virtualPath', NavPage, this,'@tx.launch');"
+                                        aria-expanded="@exp" data-target="#@tx.id" aria-controls="@tx.id">
+                                         <i class="@tx.icon"></i> @tx.Name
+                                         <div class="inline pull-right"><i id="@tx.id-ic" class="fa @gl"></i></div>
+                                     </a>
+                                 }
+
+                             </li>
+
+                             <li>
+                                 <ul id="@tx.id" class="colpn2 side-menu wd100pc ssubmenu @shw">
+
+                                     @foreach (G4CMSLib.Model.treeItem tz in tx.childItems)
+                                     {
+                                         if (tz.selected == 1) { hg = "selrw"; } else { hg = ""; }
+
+                                         if (tz.childItems.Count > 0)
+                                         {
+
+                                             if (tz.type == 1) { exp = "true"; opn = ""; shw = "show"; gl = "fa-angle-down"; }
+                                             else { exp = "false"; opn = "collapsed"; shw = "collapse"; gl = "fa-angle-left"; }
+
+                                             <li class="@hg">
+                                                 @if (tz.launch == "label")
+                                                 {
+                                                     <a href="#@tz.id" class="colpn2 @opn" data-toggle="collapse"
+                                                        aria-expanded="@exp" data-target="#@tz.id" aria-controls="@tz.id">
+                                                         <i class="@tz.icon"></i> @tz.Name
+                                                         <div class="inline pull-right"><i id="@tz.id-ic" class="fa @gl"></i></div>
+                                                     </a>
+                                                 }
+                                                 else
+                                                 {
+                                                     <a href="#@tz.id" class="colpn2 @opn" data-toggle="collapse"
+                                                        onclick="loadjsnm('@tz.virtualPath', NavPage, this,'@tz.launch');"
+                                                        aria-expanded="@exp" data-target="#@tz.id" aria-controls="@tz.id">
+                                                         <i class="@tz.icon"></i> @tz.Name
+                                                         <div class="inline pull-right"><i id="@tz.id-ic" class="fa @gl"></i></div>
+                                                     </a>
+                                                 }
+
+                                             </li>
+
+                                             <li>
+                                                 <ul id="@tz.id" class="colpn2 side-menu wd100pc xssubmenu @shw">
+
+                                                     @foreach (G4CMSLib.Model.treeItem ty in tz.childItems)
+                                                     {
+                                                         if (ty.selected == 1) { hg = "selrw"; } else { hg = ""; }
+
+                                                         if (ty.launch == "label")
+                                                         {
+                                                             <li class="@hg">
+                                                                 <a href="#" class="colpn @opn">
+                                                                     <i class="@ty.icon"></i> @ty.Name
+                                                                 </a>
+
+                                                             </li>
+                                                         }
+                                                         else if (ty.launch == "href")
+                                                         {
+                                                             <li class="@hg">
+                                                                 <a href="@ty.virtualPath" class="colpn @opn">
+                                                                     <i class="@ty.icon"></i> @ty.Name
+                                                                 </a>
+
+                                                             </li>
+                                                         }
+                                                         else
+                                                         {
+                                                             <li class="@hg">
+                                                                 <a href="#" class="colpn @opn" onclick="loadjsnm('@ty.virtualPath', NavPage, this,'@ty.launch');">
+                                                                     <i class="@ty.icon"></i> @ty.Name
+                                                                 </a>
+
+                                                             </li>
+                                                         }
+
+
+
+
+                                                     }
+                                                 </ul>
+
+                                             </li>
+
+                                         }
+                                         else
+                                         {
+
+                                             if (tz.launch == "label")
+                                             {
+                                                 <li class="@hg">
+                                                     <a href="#" class="colpn @opn">
+                                                         <i class="@tz.icon"></i> @tz.Name
+                                                     </a>
+
+                                                 </li>
+                                             }
+                                             else if (tz.launch == "href")
+                                             {
+                                                 <li class="@hg">
+                                                     <a href="@tz.virtualPath" class="colpn @opn">
+                                                         <i class="@tz.icon"></i> @tz.Name
+                                                     </a>
+
+                                                 </li>
+                                             }
+                                             else
+                                             {
+                                                 <li class="@hg">
+                                                     <a href="#" class="colpn @opn" onclick="loadjsnm('@tz.virtualPath', NavPage, this,'@tz.launch');">
+                                                         <i class="@tz.icon"></i> @tz.Name
+                                                     </a>
+
+                                                 </li>
+                                             }
+                                         }
+                                     }
+
+                                 </ul>
+                             </li>
+                         }
+                         else
+                         {
+                             if (tx.launch == "label")
+                             {
+                                 <li class="@hg">
+                                     <a href="#" class="colpn @opn">
+                                         <i class="@tx.icon"></i> @tx.Name
+                                     </a>
+
+                                 </li>
+                             }
+                             else if (tx.launch == "href")
+                             {
+                                 <li class="@hg">
+                                     <a href="@tx.virtualPath" class="colpn @opn">
+                                         <i class="@tx.icon"></i> @tx.Name
+                                     </a>
+
+                                 </li>
+                             }
+                             else
+                             {
+                                 <li class="@hg">
+                                     <a href="#" class="colpn @opn" onclick="loadjsnm('@tx.virtualPath', NavPage, this,'@tx.launch');">
+                                         <i class="@tx.icon"></i> @tx.Name
+                                     </a>
+
+                                 </li>
+                             }
+
+                         }
+
+                     }
+                 </ul>
+             </li>
+         }else {
+
+                        if (tr.launch == "label")
+                        {
+
+                                <li class="@hg">
+                                    <a href="#" class="colpn">
+                                        <i class="@tr.icon"></i> @tr.Name
+                                    </a>
+                                </li>
+
+                            }
+                            else
+                            {
+
+                                <li class="@hg">
+                                    <a href="#" class="colpn" onclick="loadjsnm('@tr.virtualPath', NavPage, this,'@tr.launch');">
+                                        <i class="@tr.icon"></i> @tr.Name
+                                    </a>
+                                </li>
+
+                                }
+
+
+                            }
+     }
+    }
+ </ul>
+
+ 
+ }
+   

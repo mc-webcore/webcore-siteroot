@@ -1,0 +1,87 @@
+
+.media-1 {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 30px; 
+  border-radius: 6px;
+  box-shadow: 3px 4px 5px 2px #cccccc78;
+  border: 1px dotted #ddd;
+ }
+  .media-1:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    content: "";
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+    opacity: 0;
+    visibility: hidden; }
+  .media-1 img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+  .media-1 .media-1-content {
+    z-index: 4;
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .media-1 .media-1-content h2 {
+      position: relative;
+      color: #fff;
+      font-size: 1.5rem;
+      -webkit-transition: .4s all ease-in-out;
+      -o-transition: .4s all ease-in-out;
+      transition: .4s all ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+      bottom: -10px;
+      margin-bottom: 0px; }
+    .media-1 .media-1-content .category {
+      position: relative;
+      -webkit-transition: .3s all ease-in-out;
+      -o-transition: .3s all ease-in-out;
+      transition: .3s all ease-in-out;
+      opacity: 0;
+      bottom: -10px;
+      visibility: hidden;
+         color: #d0ebff;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .2em; }
+  .media-1:hover:after {
+    opacity: 1;
+    visibility: visible; }
+  .media-1:hover h2 {
+    bottom: 0px;
+    opacity: 1;
+    visibility: visible; }
+  .media-1:hover .category {
+    opacity: 1;
+    visibility: visible;
+    bottom: 0px;
+    -webkit-transition-delay: 0.09s;
+    -o-transition-delay: 0.09s;
+    transition-delay: 0.09s; }
+  .media-1:hover img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); }
+
+
+#case-studies .title {
+    color: #212362;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}

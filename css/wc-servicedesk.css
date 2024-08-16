@@ -1,0 +1,504 @@
+﻿.wc-sdesk-logo {
+    position: absolute;
+    top: 43px;
+    right: -85px;
+    background: #fff;
+    padding: 3px 7px;
+    transform: rotate(90deg);
+   
+}
+
+.pill-btn-sq {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+.pill-btn {
+    border: 1px solid #ddd;
+    padding: 4px 15px;
+    width: 100px;
+    display: block;
+    border-radius: 5px;
+}
+
+.mb-5x {
+    margin-bottom: 5px;
+}
+
+a.pill-btn:hover, a.pill-btn-sq:hover {
+    background: #161414;
+    color: #fff!important;
+    text-decoration: none;
+}
+
+
+.btn-sd {
+    border: 1px solid #ddd;
+    padding: 4px 15px;
+    border-radius: 5px;
+}
+
+    .btn-sd:hover, btn-sd:focus {
+        background: #161414 !important;
+        color: #fff !important;
+    }
+
+    .btn-sd i {
+        font-size: 0.7rem;
+    }
+
+.note-pn {
+    border-left: 3px solid #b1bef1;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.note-client-pn {
+    border: 1px dotted #ccc;
+    border-left: 5px solid #87b7e7;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px 15px 15px 5px;
+}
+
+.note-support-pn {
+    border: 1px dotted #ccc;
+    border-left: 4px solid #d9b472;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0 15px 15px 5px;
+}
+
+.note-internal-pn {
+    border: 1px dotted #ccc;
+    border-left: 4px solid #808080;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0 15px 15px 5px;
+}
+
+#cdlist {
+    font-family: gotham-light;
+}
+
+    #cdlist .form-control {
+        border-radius: 0;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+    }
+
+.mt-5x {
+    margin-top: 5px;
+}
+
+.mb-5x {
+    margin-bottom: 5px;
+}
+
+#rzcode {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: calc(100vh - 257px);
+    margin-top: 5px;
+}
+
+.editor-ht {
+    height: calc(100vh - 205px);
+}
+
+#rxbtns li {
+    display: inline;
+}
+
+.mxw60 {
+    max-width: 60px;
+}
+
+.cfg-btm-rt {
+    position: relative;
+    bottom: -25px;
+    right: 0px;
+    float: right;
+}
+.drop-pan {
+    cursor: pointer;
+}
+
+
+.overly:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    opacity: 0.9;
+}
+
+.dz-preview {
+    display: none!important;
+}
+
+.pill-btn {
+    border: 1px solid #ddd;
+    padding: 4px 15px;
+    width: 100px;
+    display: block;
+    border-radius: 5px;
+}
+.brd-top {
+    border-top: 1px solid #d3d3d3;
+}
+
+.drop-pan:before {
+    content: 'drop attachments here';
+    padding: 70px;
+    position: absolute;
+    color: #d7d7d7;
+    font-size: 16px;
+    right: 70px;
+    top: 5px;
+}
+
+
+.button-pane {
+    width: 100%;
+    height: 32px;
+    background-color: #eff1f7;
+    border-bottom: 1px solid #d7e0e2;
+    padding: 0 5px;
+    position: relative;
+    list-style-type: none;
+    line-height: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 11;
+}
+
+.note-pn {
+    border-left: 3px solid #b1bef1;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.note-client-pn {
+    border: 1px dotted #ccc;
+    border-left: 5px solid #87b7e7;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px 15px 15px 5px;
+}
+
+.note-support-pn {
+    border: 1px dotted #ccc;
+    border-left: 4px solid #d9b472;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0 15px 15px 5px;
+}
+
+.note-internal-pn {
+    border: 1px dotted #ccc;
+    border-left: 4px solid #808080;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0 15px 15px 5px;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.inline-id {
+    color: #041bbd;
+    font-size: 14px;
+    font-family: system-ui;
+}
+
+.clr-red {
+    color: #c33c3c;
+}
+
+.clr-v {
+    color: #862193;
+}
+
+.pd-8 {
+    padding: 8px;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.pnDetails {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-height: 200px;
+    min-height: 200px;
+    border: 1px solid #dbdbdb;
+    font-size: 14px;
+}
+
+    .pnDetails .brd-btm {
+        border-bottom: 1px dotted #dcc3ee;
+    }
+
+    .pnDetails .overflow {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 166px;
+    }
+
+    .pnDetails.expand {
+        max-height: 650px;
+        min-height: 650px;
+    }
+
+        .pnDetails.expand .overflow {
+            max-height: 616px;
+        }
+
+.pnAttach {
+    max-height: 150px;
+    min-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#upfile {
+    position: relative;
+    top: -140px;
+    right: -145px;
+    color: #999;
+    cursor: pointer;
+}
+
+#rtNav {
+    min-width: 200px;
+}
+
+.mnu-ul {
+    list-style: none;
+    display: block;
+    float: right;
+}
+
+    .mnu-ul li {
+        display: inline-block;
+    }
+
+.select2-container--default {
+    font-size: 12px;
+}
+
+    .select2-container--default.select2-container--focus .select2-selection--multiple {
+        border: solid #d3d3d3 1px !important;
+        outline: 0;
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        background-color: white;
+        border: solid #d3d3d3 1px !important;
+        height: 35px;
+        margin-bottom: 3px;
+    }
+
+    .select2-container--default.select2-container--focus .select2-selection--multiple {
+        border: solid #d3d3d3 1px !important;
+        outline: 0;
+    }
+
+.mt5 {
+    margin-top: 5px;
+}
+
+#pnVw a.filelnk {
+    color: #596c78;
+    font-size: 13px;
+    font-family: system-ui;
+    padding: 5px 12px;
+    border: 1px solid #f5f2f2;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+    #pnVw a.filelnk:hover {
+        background: #edf2ff;
+    }
+
+.spnloading {
+    background: #888888ab;
+    opacity: 0.4;
+    position: relative
+}
+
+    .spnloading:before {
+        content: '';
+        padding: 100px;
+        background-image: url('/img/loader.svg');
+        background-size: 61px;
+        background-repeat: no-repeat;
+        top: 33px;
+    }
+
+.form-control {
+    font-size: 14px;
+}
+
+.smlxx {
+    font-size: 11px;
+}
+
+.pnDetails p > img {
+    border: 1px dotted #ccc;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+}
+
+.inpu-group label {
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.sideUsr .userbloc {
+    padding: 6px!important;
+}
+
+.tbx > .row {
+    font-size: 0.86rem;
+    cursor: pointer;
+}
+
+.rw-pnc {
+    padding: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+.rw-pn {
+    padding: 3px;
+    cursor: pointer;
+    background: #ffffff;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+   
+
+.rw-spnc {
+    padding: 3px;
+    background-color: #ededed;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+.rw-spn {
+    padding: 3px;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+    .rw-pn:hover, .rw-pnc:hover, .rw-spnc:hover, .rw-spn:hover, .rw-app:hover {
+        background-color: #f7f8f8;
+    }
+
+.rw-wt {
+    padding: 3px;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+    border-left: 1px dotted #c7c7c7;
+    border-right: 1px dotted #c7c7c7;
+}
+
+.rw-app {
+    background-color: #d6cddb73;
+    padding: 3px;
+}
+
+.rw-rj {
+    background: #fff7f7;
+    color: #a90c0c;
+    padding: 3px;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+    .rw-rj:hover {
+        background: #fff1f1;
+    }
+
+.rw-on {
+    color: #1a7e1d;
+    background: #fff;
+    padding: 3px;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+    .rw-on:hover {
+        background: #dbdbdb;
+    }
+
+.rw-off {
+    background: #fdfaff;
+    padding: 3px;
+    color: #6c6c6c;
+    cursor: pointer;
+    border-bottom: 1px dotted #c7c7c7;
+}
+
+    .rw-off:hover, .rw-wt:hover {
+        background: #f3f3f3;
+    }
+
+.rw-ap {
+    background: #fff5df;
+    padding: 3px;
+    border-bottom: 1px dotted #c7c7c7;
+    cursor: pointer;
+}
+
+    .rw-ap:hover {
+        background: #ffeec8
+    }
+
+.rw-unread {
+    color: #333;
+    font-weight: 600;
+    background: #c1ddff;
+}
+
+#pnVw a {
+    color: #1f132b;
+}
+
+    #pnVw a:hover {
+        color: #bd0b0b;
+    }
+
+
+.select2-container--default .select2-selection--multiple {
+       padding-top: 1px;
+}

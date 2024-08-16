@@ -1,0 +1,204 @@
+﻿
+@model G4CMSLib.Model.CMSPageView
+
+
+@if (Model != null)
+{
+
+
+    string hg = "";
+    int rw = 0;
+
+<ul class="exo-menu">
+    <li class="pushml30"></li>
+
+    @if (Model.SiteStructure != null)
+    {
+
+        foreach (G4CMSLib.Model.treeItem tr in Model.SiteStructure)
+        {
+            rw = 0;
+
+            if (tr.childItems.Count > 0)
+            {
+
+
+                <li class="mega-drop-down">
+
+
+                    @if (tr.launch == "label")
+                    {
+                        <a href="#" class="toptree colpn">
+                            <i class="@tr.icon"></i> @tr.Name
+                            <div class="inline pull-right"><i id="5046-ic" class="fa fa-angle-down"></i></div>
+                        </a>
+                    }
+                    else if (tr.launch.Trim() == "href")
+                    {
+                        <a href="@tr.virtualPath" class="toptree">
+                            <i class="@tr.icon"></i> @tr.Name
+                            <div class="inline pull-right"><i id="5047-ic" class="fa fa-angle-down"></i></div>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="#" class="toptree" onclick="loadjsnm('@tr.virtualPath', NavPage, this,'@tr.launch','#rsView');">
+                            <i class="@tr.icon"></i> @tr.Name
+
+                            <div class="inline pull-right"><i id="5048-ic" class="fa fa-angle-down"></i></div>
+                        </a>
+
+                    }
+
+
+
+                    <div id="@tr.id" class="xanimated fadeIn mega-menu">
+                        <div id="megamnu" class="container mega-menu-wrap pl-30">
+                            <div class="row">
+                                @foreach (G4CMSLib.Model.treeItem tx in tr.childItems)
+                                {
+                                    rw++;
+
+                                    <div class="col-sm-3">
+                                        @if (tx.launch == "label")
+                                        {
+                                            <h4 class="row mega-title"><i class="@tx.icon"></i> @tx.Name</h4>
+                                        }
+                                        else if (tx.launch.Trim() == "href")
+                                        {
+                                            <a href="@tx.virtualPath">
+                                                <h4 class="row mega-title"><i class="@tx.icon"></i> @tx.Name</h4>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" onclick="loadjsnm('@tx.virtualPath', NavPage, this,'@tx.launch','#rsView');">
+                                                <h4 class="row mega-title"><i class="@tx.icon"></i> @tx.Name</h4>
+                                            </a>
+
+                                        }
+
+                                        <ul id="@tx.id">
+
+                                            @foreach (G4CMSLib.Model.treeItem tz in tx.childItems)
+                                            {
+
+
+                                                if (tz.launch == "href")
+                                                {
+                                                    <li>
+                                                        <a href="@tz.virtualPath" class="colpn">
+                                                            <i class="@tz.icon"></i> @tz.Name
+                                                        </a>
+
+                                                    </li>
+                                                }
+                                                else
+                                                {
+
+                                                    <li>
+                                                        <a href="#" class="colpn2" onclick="loadjsnm('@tz.virtualPath', NavPage, this,'@tz.launch','#rsView');">
+                                                            <i class="@tz.icon"></i> @tz.Name
+                                                        </a>
+
+                                                    </li>
+
+                                                }
+
+
+
+                                            }
+
+                                        </ul>
+
+                                    </div>
+
+                                    if (rw > 3)
+                                    {
+                                        rw = 0;
+                                        @Html.Raw("</div><div class=\"row\">")
+
+                                    }
+
+
+
+
+
+
+
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+
+
+
+            }
+            else
+            {
+                <li class="@hg">
+                    @if (tr.launch == "label")
+                    {
+                        <a href="#" class="toptree colpn">
+                            <i class="@tr.icon"></i> @tr.Name
+                        </a>
+                    }
+                    else if (tr.launch.Trim() == "href")
+                    {
+                        <a href="@tr.virtualPath" class="toptree">
+                            <i class="@tr.icon"></i> @tr.Name
+                        </a>
+                    }
+                    else
+                    {
+
+                        <a href="#" class="toptree colpn" onclick="loadjsnm('@tr.virtualPath', NavPage, this,'@tr.launch','#rsView');">
+                            <i class="@tr.icon"></i> @tr.Name
+                        </a>
+
+
+                    }
+
+                </li>
+
+
+            }
+
+
+
+
+
+
+
+        }
+
+    }
+
+
+  @*@if (User.Identity.IsAuthenticated)
+    {
+      <li id="myacnt" class="mega-drop-down">
+    <a href="/profile" class="toptree">
+        MY ACCOUNT
+    </a>
+   <div id="rwMyAccount" class="animated fadeIn mega-menu">
+        <div id="megamnu" class="container mega-menu-wrap pl-30">
+            <div class="row">
+
+            </div>
+        </div>
+    </div
+</li>
+
+    }*@
+
+
+
+</ul>
+
+
+}

@@ -1,0 +1,63 @@
+﻿@using CustomExtensions;
+@model G4CMSLib.Model.Files
+
+
+@if (Model != null)
+{
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-blue">
+                <tr>
+                    <th scope="cold">
+                        File
+                    </th>
+                    <th scope="col-opn"></th>
+                    <th scope="col-date">
+                        Created Date
+                    </th>
+                    <th scope="col-date">
+                        Last Modified
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (G4CMSLib.Model.treeItem fl in Model.files)
+                {
+
+
+                    <tr>
+                        <td>
+                            <a download="" href="@fl.virtualPath">
+                                @fl.Name
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#" onclick="viewfxml('@fl.rootPath.Encrypt()','@fl.Name');">
+                                <i class="fa fa-file-code"></i>
+                            </a>
+                        </td>
+                        <td class="sml">
+                            @fl.CreationDateTime
+                        </td>
+                        <td class="sml">
+                            @fl.LastModifiedDateTime
+                        </td>
+                    </tr>
+
+
+                }
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+}
+
+

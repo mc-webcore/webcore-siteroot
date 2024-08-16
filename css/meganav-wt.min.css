@@ -1,0 +1,1 @@
+.megamnu{display:flex;background:#fff}.exo-menu{background:#fff;border-top:2px solid #f1f4ff}.exo-menu>li>a{color:#121111}.exo-menu>li>a{border-top:2px solid #fff}.exo-menu>li>a.active,.exo-menu>li>a:hover,li.drop-down ul>li>a:hover{background:#fff;color:#115bc9;border-top:2px solid}@media(min-width:767px){.exo-menu>li>a{display:block;padding:13px 22px}}

@@ -1,0 +1,57 @@
+
+.hex {
+    background: #29272eb3;
+    padding: 30px;
+    border-bottom: 2px solid transparent;
+    transition: .5s all;
+    margin-bottom: 20px;
+    color: #d8dfe5;
+    border: 1px dotted #98deff;
+    box-shadow: 2px 1px 16px 2px #79738ff2;
+}
+
+.hex .icon-box {
+    position: relative;
+    width: 158px;
+    height: 92.38px;
+    background-color: transparent;
+    margin: 46.19px auto 60px;
+    padding: 10px 0;
+    border-left: 2px solid rgb(114 198 255);
+    border-right: 2px solid rgb(113 198 255);
+    font-size: 50px;
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+    transition-duration: 0.3s;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+}
+
+.hex .icon-box:before {
+    top: -56.5685px;
+    border-top: 2px solid rgb(114 198 255);
+    border-right: 2px solid rgb(157 214 252);
+}
+
+.hex .icon-box:after, .hex .icon-box:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 112.14px;
+    height: 112.14px;
+    background-color: inherit;
+    left: 21.4315px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+}
+
+.hex .icon-box:after {
+    bottom: -56.5685px;
+    border-bottom: 2px solid rgb(114 198 255);
+    border-left: 2px solid rgb(149 212 255);
+}
+
+
+
+

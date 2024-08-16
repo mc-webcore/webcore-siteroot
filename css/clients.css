@@ -1,0 +1,30 @@
+.clients {
+       width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    /* background-color: #f5f5ff; */
+       background-color: #243560ab;
+    position: relative;
+}
+
+    .clients img {
+        height: 67px;
+        /* transition: all 0.4s ease-in-out; */
+        display: inline-block;
+        padding: 15px 0;
+     /*   filter: grayscale(100);
+      filter: brightness(0) invert(1);*/
+    }
+/*
+.clients img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+*/
+@media (max-width: 768px) {
+  .clients img {
+   height: 58px;
+  }
+}
+

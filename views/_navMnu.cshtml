@@ -1,0 +1,52 @@
+﻿@model G4CMSLib.Model.CMSPageView
+
+
+@if (Model != null)
+{
+    string hg = "";
+  
+
+
+<nav class="site-navigation position-relative text-right" role="navigation">
+
+    @if (Model.SiteStructure != null)
+    {
+
+    <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+
+        @foreach (G4CMSLib.Model.treeItem tr in Model.SiteStructure)
+             {
+                  hg = "";
+                  if (tr.selected==1) { hg = "active"; }
+
+                if (tr.childItems.Count > 0)
+                 {
+                <li class="has-children">
+                    <a href="@tr.virtualPath">@tr.Name</a>
+                    <ul class="dropdown">
+
+                        @foreach (G4CMSLib.Model.treeItem tx in tr.childItems)
+                {
+                            <li><a href="/services">@tx.Name</a></li>
+
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li class="@hg"><a href="@tr.virtualPath">@tr.Name</a></li>
+
+            }
+
+         
+         }
+    </ul>
+    }
+  </nav>
+
+
+
+
+
+}

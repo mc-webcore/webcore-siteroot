@@ -1,0 +1,122 @@
+.fp-banner-image2 {
+    background: url('../img/24.png') no-repeat;
+    background-position: right;
+    background-size: cover;
+    align-items: center;
+    background-color: #25252a;
+}
+
+.icon-tools-2:before {
+    content: "\e034";
+    font-size: 64px;
+    color: #318EC3;
+}
+
+section {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.mt-4 {
+    margin-top: 1.5rem!important;
+}
+/*--------------------------------------------------------------
+# Pricing
+--------------------------------------------------------------*/
+.pricing .box {
+  padding: 20px;
+  background: #f9f9f9;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing .box h3 {
+  font-weight: 400;
+  padding: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.pricing .box h4 {
+  font-size: 42px;
+  color: #85b0be;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+}
+
+.pricing .box h4 sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+
+.pricing .box h4 span {
+  color: #bababa;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.pricing .box ul {
+  padding: 0;
+  list-style: none;
+  color: #052c3f;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+    .pricing .box p {
+        text-align: justify;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: .92rem;
+    }
+
+.pricing .box ul li {
+  padding-bottom: 16px;
+}
+
+.pricing .box ul i {
+  color: #85b0be;
+  font-size: 18px;
+  padding-right: 4px;
+}
+
+.pricing .box ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.pricing .box .btn-wrap {
+  padding: 15px;
+  text-align: center;
+}
+
+.pricing .box .btn-buy {
+    display: inline-block;
+    padding: 10px 40px 12px 40px;
+    border-radius: 4px;
+    color: #333333;
+    transition: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.3s;
+    border-color: #0f0f0f;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.pricing .box .btn-buy:hover {
+  background: #131313ba;
+  color:#fff;
+  text-decoration: none;
+}
+
+.pricing .featured {
+     background: #ebeaf375;
+  box-shadow: none;
+}

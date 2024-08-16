@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="mchiazza">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("meta", required: false)
+    @RenderSection("title", required: false)
+
+    <link rel="shortcut icon" href="/img/favicon-update.ico">
+    <link rel="icon" type="image/x-icon" href="/img/favicon-update.ico">
+
+    <link href="/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="/css/fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet" />
+    <link href="/css/cmxsite.css" rel="stylesheet" />
+
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+  
+
+    @RenderSection("styles", required: false)
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231480760-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-231480760-1');
+    </script>
+</head>
+<body class="eupopup eupopup-bottomright">
+
+    <div id="wrapper2">
+
+        <!-- Navigation -->
+        <div id="myheader">
+            <nav class="navbar navbar-default navbar-static-top pattern2" role="navigation">
+                <div class="navbar-header">
+                    <div class="mnuBtnLft">
+                        <button id='trigger' class="mnuBtn" onclick="return false;">
+                            <i class="fa fa-bars fa-lg"></i>
+                        </button>
+                    </div>
+
+                    <div id="topnav" class="container float-left">
+                        <a class="navbar-brand" href="/">
+
+
+                            <div class="cmstitle">
+                                <img class="deepblulogo" src="~/img/logowt-sm.png" />
+                                webcore cmx
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="infopn">
+                        <div id="lastupd">
+
+                            @RenderSection("LastUpdate", required: false)
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </nav>
+        </div>
+
+
+        <div id="sdmenu" class="leftmegamnu">
+            <div id="mobhdr" class="mobhdr">
+                <div class="mnuBtnLft2">
+                    <button id='trigger2' class="mnuBtnWt" onclick="sideMenu('hide');">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
+                </div>
+
+
+
+
+                <img class="mnulogo" src="/img/logoblk-sml.png" />
+                <span class="mobtitle"> webcore cmx</span>
+
+
+
+            </div>
+            <div id="topmega" class="megamnu">
+
+                @RenderSection("navigation", required: false)
+
+            </div>
+
+        </div>
+
+        <div class="bannerpad banner-frm-fade banmob" id="myndc">
+
+            <div class="container banpad">
+                <div>
+                    <span id="title" class="logobag">@ViewBag.Title</span>
+                    <div id="subtitle">@ViewBag.subTitle </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="container" class="container-fluid minHeight">
+            <div>
+                <div class="col-sm-12">
+
+                    <div id="rsView">
+                        @RenderBody()
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <input id="uqId" name="uqId" type="hidden" value="@ViewBag.uniqueId" />
+
+    </div>
+
+    <div id="loadr" class="nldrpn hide">
+
+        <div class="nldrspan pattern">
+            <img src="~/img/logoBlk.png" class="nldricon" />
+
+            <br />
+
+            <span style="font-size:16px;">Working on it ...</span>
+            <br />
+
+            <br />
+            <div class="nldx">
+                <div class="nldr"></div>
+
+            </div>
+
+            <br />
+
+        </div>
+    </div>
+
+
+
+    <div id="scrollTop" class="scTop" onclick="ScrollTop();">
+        <i class="fas fa-chevron-circle-up fa-3x"></i>
+    </div>
+
+
+
+    <footer class="sticky-footer2">
+        <div id="myfooter">
+
+        </div>
+    </footer>
+
+    <div class="cmsfooter text-center">
+        <div>
+            <div>
+                <p>
+
+                    powered by <img src="https://start.webcore.ws/img/logowt.png" style="height:30px" /> webcore cmx
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <link href="~/js/prism/prism.css" rel="stylesheet" />
+
+
+
+    @Scripts.Render("/Scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("/js/notify.min.js")
+    @Scripts.Render("~/js/prism/prism.js")
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+
+@Scripts.Render("/js/ajxmod.js?v=2")
+
+                @Scripts.Render("/js/hammer.js")
+                                @Scripts.Render("/js/jquery.slidereveal.js")
+                                                @Scripts.Render("/js/modal/jquery-confirm.js")
+                                                                <link rel="stylesheet" href="/js/modal/jquery-confirm.css"> }
+                                                            else
+                                                            {
+
+                                                @Scripts.Render("/js/ajxmod.min.js?v=2")
+
+                                                                @Scripts.Render("/js/hammer.min.js")
+                                                                                @Scripts.Render("/js/jquery.slidereveal.min.js")
+                                                                                                @Scripts.Render("/js/modal/jquery-confirm.min.js")
+                                                                                                                <link rel="stylesheet" href="/js/modal/jquery-confirm.min.css">}
+
+
+    <scriptsection>
+        @RenderSection("scripts", required: false)
+    </scriptsection>
+    <script>
+        $(function () {
+
+            $('.toggle-menu').click(function () {
+                $('.exo-menu').toggleClass('display');
+
+            });
+
+            loadvwpart('/viewpart/web/footer', '#myfooter');
+
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/js/cookiechk/jquery-eu-cookie-law-popup.css" />
+    <script src="/js/cookiechk/jquery-eu-cookie-law-popup.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     
+                                     

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="mchiazza">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("meta", required: false)
+    @RenderSection("title", required: false)
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    @WStyles.Render("{assetpath}bootstrap/bootstrap.css")
+
+    <link href="~/css/cms-fonts.css" rel="stylesheet" />
+    <link href="/css/fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet" />
+
+    <link href="/css/themify-icons.css" rel="stylesheet" />
+    <link href="/css/idserver.css" rel="stylesheet" />
+    @WStyles.Render("{assetpath}fonts/webcoreFont/style.css")
+
+    @WStyles.RenderBundle("/bundles/footer", "{assetpath}css/footer.css", "/css/idserver.css",
+    "{assetpath}css/wc-dropdown.css", "{assetpath}css/meganav.css", "/css/cmxsite.css", "{assetpath}css/webcore.css",
+    "/css/errorpn.css","{assetpath}css/search.css","{assetpath}css/cards.css","{assetpath}css/fpslides.css"
+    )
+
+    @RenderSection("styles", required: false)
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5LF39Q59R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L5LF39Q59R');
+    </script>
+
+</head>
+<body class="eupopup eupopup-bottomright">
+
+    <div id="wrapper2">
+
+
+        <!-- Navigation -->
+        <div id="header" class="fixed-top">
+            <div id="myheader" class="container">
+                <nav id="nav-bar-white" class="navbar  navbar-default navbar-static-top " role="navigation">
+                    <div class="navbar-header">
+
+                        <div id="topnav" class="float-left">
+                            <a class="navbar-brand" href="/">
+
+
+                                <div class="cmstitle">
+                                 
+                                    <i title="webcore solutions " alt="webcore solutions" class="icon-hex-logo"></i>
+                                    <span>  webcore</span>
+                                </div>
+                            </a>
+
+                            @RenderSection("Searchbar", required: false)
+                            
+
+                        </div>
+                    </div>
+                  
+
+
+
+
+                </nav>
+            </div>
+
+
+            <div id="sdmenu" class="leftmegamnu">
+                <div id="mobhdr" class="mobhdr">
+                    <div class="mnuBtnLft2">
+                        <button id='trigger2' class="mnuBtnWt" onclick="sideMenu('hide');">
+                            <i class="icon-menu"></i>
+                        </button>
+                    </div>
+
+
+
+
+                    <div class="cmsfont">
+                     
+                        <i title="webcore solutions " alt="webcore solutions" class="icon-hex-logo"></i>
+
+                        <span>  webcore</span>
+                    </div>
+
+
+
+                </div>
+                <div id="topmega" class="megamnu fp-banner megamnu-noban">
+
+                    @RenderSection("navigation", required: false)
+
+                </div>
+                <div id="leftnav-mob">
+
+                </div>
+            </div>
+        </div>
+
+        @RenderSection("sidenav", required: false)
+
+
+        <div class="main-content">
+            <form id="formMain" method="post">
+                @Html.AntiForgeryToken()
+
+                <div id="container" class="minHeight">
+                    <div>
+                        <div id="errorpn" class="">
+                            <div class="pnclose">
+                                <a href="#" onclick="closeErr('#errorpn');"><i class="fa fa-times-circle fa1x"></i></a>
+                            </div>
+                            <div id="errDet" class="err">
+
+                            </div>
+                        </div>
+                        <div id="confpn" class="">
+                            <div id="confDet" class="conf">
+                                <i class="fa fa-check-circle"></i>
+                                Saved Successfully.
+                            </div>
+                        </div>
+                        <div id="rsView">
+                            @RenderBody()
+                        </div>
+
+                    </div>
+                </div>
+
+                <input id="uqId" name="uqId" type="hidden" value="@ViewBag.uniqueId" />
+            </form>
+        </div>
+    </div>
+
+    @Html.Partial("_loader")
+
+
+    <div id="scrollTop" class="scTop" onclick="ScrollTop();">
+        <i class="fas fa-caret-square-up fa-3x"></i>
+    </div>
+
+
+    <div class="layout-footer">
+        <footer class="sticky-footer">
+            <div id="myfooter">
+
+            </div>
+        </footer>
+
+        <div class="cmsfooter text-center">
+            <div>
+                <div>
+                    <p>
+
+                        powered by <i class="icon-hex-logo"></i> webcore cmx
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <form id="account" method="post" action="/Account/LogOff">
+    </form>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @WScripts.Render("{assetpath}bootstrap/popper.min.js")
+
+    @WScripts.Render("{assetpath}bootstrap/bootstrap.js")
+
+
+
+    @WScripts.Render("/js/ajxmod.js?v=2")
+
+    @WScripts.Render("/js/hammer.js")
+
+    @WScripts.Render("/js/modal/jquery-confirm.js")
+
+    <link rel="stylesheet" href="/js/modal/jquery-confirm.css">
+    @WScripts.Render("/js/idserver.js")
+    @WScripts.Render("{assetpath}js/search.js")
+    @WScripts.Render("/js/jquery.slidereveal.js")
+
+    <scriptsection>
+        @RenderSection("scripts", required: false)
+    </scriptsection>
+    <script>
+        $(function () {
+
+            $('.toggle-menu').click(function () {
+                $('.exo-menu').toggleClass('display');
+
+            });
+
+            loadvwpart('/viewpart/web/footer', '#myfooter');
+
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="/js/cookiechk/jquery-eu-cookie-law-popup.css" />
+    <script src="/js/cookiechk/jquery-eu-cookie-law-popup.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     
+                                     
+                                     
+
+
+
+
+
+
+
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     

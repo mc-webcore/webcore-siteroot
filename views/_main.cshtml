@@ -1,0 +1,68 @@
+@model G4CMSLib.Model.CMSPageView
+
+@{
+    ViewBag.title = Model.PageContent.title;
+    ViewBag.subtitle = Model.PageContent.subtitle;
+    ViewBag.navgroup = Model.NavigationGroup;
+
+}
+
+
+@section title{
+    <title>
+        @Html.Raw(Model.PageContent.title)-
+        @Html.Raw(Model.PageContent.subtitle)
+    </title>
+
+}
+
+
+@section meta{
+    @Html.Raw(Model.PageContent.metaTags)
+}
+
+
+@Html.Raw(Model.PageContent.htmcontent)
+
+
+<input id="country" name="country" type="hidden" value="@Model.PageContent.country" />
+<input id="pgiid" name="pgiid" type="hidden" value="@Model.PageContent.unique_id.ToString()" />
+
+
+
+
+@section styles{
+    @Html.Raw(Model.LayoutCssInclude)
+
+    <stylessection>
+        @Html.Raw(Model.PageCssInclude);
+
+    </stylessection>
+}
+
+@section scripts{
+    @Html.Raw(Model.LayoutJssInclude)
+    @Html.Raw(Model.PageContent.pageScripts)
+
+}
+
+
+
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                

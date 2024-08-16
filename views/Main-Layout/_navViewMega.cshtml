@@ -1,0 +1,182 @@
+@using WebCoreBase.CustomExtensions
+@model G4CMSLib.Model.CMSPageView
+
+@{ ViewBag.title = Model.PageContent.title;
+    ViewBag.subtitle = Model.PageContent.subtitle;
+    ViewBag.navgroup = Model.NavigationGroup; }
+
+
+@section title{
+    <title>
+        @Html.Raw(Model.PageContent.title) -
+        @Html.Raw(Model.PageContent.subtitle)
+    </title>
+
+}
+
+
+@section meta{
+    @Html.Raw(Model.PageContent.metaTags)
+}
+
+
+
+@if (Model.IsExpired)
+{
+    <div id="subexpired" style="position:fixed; top: 0; width: 100%; background:#8f1e1e;color:#fff;z-index:10000;padding:10px">
+        <div>
+            <span>
+                <i class="fa fa-warning"></i>
+                License & Subscription Expired - please renew as soon as possible
+            </span>
+        </div>
+
+    </div>
+}
+
+
+
+@Html.Raw(Model.PageContent.htmcontent)
+
+
+<input id="country" name="country" type="hidden" value="@Model.PageContent.country" />
+<input id="pgiid" name="pgiid" type="hidden" value="@Model.PageContent.unique_id.ToString()" />
+<input id="piid" name="piid" type="hidden" value="@Model.PageContent.id.ToString()" />
+<input id="uiid" name="uiid" type="hidden" value="@Model.IsAuthenticated.ToString().ToLower()" />
+
+@section navigation{
+
+    @if (Model.NavigationGroup != "none")
+    {
+        @Html.Partial(Model.viewPath + "Main-Layout/_navMegaMnu.cshtml", Model)}
+
+
+
+}
+
+
+
+@section styles{
+    @Html.Raw(Model.LayoutCssInclude)
+
+    <stylessection>
+        @Html.Raw(Model.PageCssInclude)
+
+    </stylessection>
+}
+
+@section scripts{
+    <script>
+        var host = '@Model.Host';
+        var cmxhost = '@Model.CMXHost';
+    </script>
+    @Html.Raw(Model.LayoutJssInclude)
+    @Html.Raw(Model.PageJsInclude)
+}
+
+
+@section Searchbar {
+
+
+    @if (Model.SubscriberLevel != null)
+    {
+        <div id="pnSrchtop" class="srchbar">
+            <ul class="nav navbar-nav nav-right wc-dropdown  navfnt">
+                @if (Model.SubscriberLevel.AllowSearch == 1)
+                {
+                    <li class="srchbx">
+                        <div class="input-group">
+                            <input type="Search" id="srchtop" name="srchtop" placeholder="Search..." class="form-control" />
+                            <div class="input-group-btn">
+                                <button type="button" onclick="doSearch();" class="btn btn-light btn-mnu btn-addon">
+                                    <i class="ti-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+
+                }
+
+                @if (Model.SubscriberLevel.AllowViewSiteRole == 1)
+                {
+                    <li class="usrtop">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="/myaccount">
+                                <div id="usrnm" class="smx userbloc d-inline-block" title="@User.Identity.Name">
+                                    @User.Identity.Name.Initials()
+                                </div>
+
+                            </a>
+                            <ul id="topusrnav" class="wc-dropdown-menu">
+                                <li>
+                                    <a href="/myaccount">
+                                        @User.Identity.Name
+                                    </a>
+                                </li>
+                                <li>
+                                    <form id="account" method="post" action="/Account/LogOff">
+                                        @Html.AntiForgeryToken()
+
+                                        <a href="#" tabindex="-1" onclick="logoff();">
+                                            <i class="ti-power-off fa-sm jstree-themeicon-custom" role="presentation"></i>  Logout
+                                        </a>
+
+                                    </form>
+                                </li>
+                            </ul> }
+                        else
+                        {
+                            <div class="ptx-5">
+                                <a href="/account/login" class="pl-10 nocaret">
+                                    <i class="fa fa-user-circle fa-2x fa-fw"></i>
+                                </a>
+                            </div>
+                        }
+                    </li>
+
+                }
+                <li>
+                    <div class="mnuBtnLft">
+                        <button id='trigger' class="mnuBtnWt" onclick="return false;">
+                            <i class="icon-menu"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

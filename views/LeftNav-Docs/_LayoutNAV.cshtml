@@ -1,0 +1,561 @@
+﻿@using WebCoreBase.CustomExtensions
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @RenderSection("title", required: false)
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("meta", required: false)
+    <meta name="author" content="webcore.ws mchiazza">
+    <meta charset="utf-8" />
+
+    <subsection>
+
+
+
+
+    </subsection>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="/css/fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet" />
+    <link href="/css/cmxsite.css" rel="stylesheet" />
+
+
+
+    @WStyles.Render("{assetpath}bootstrap/bootstrap.css")
+    @WStyles.Render("/css/errorpn.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/modal/jquery-confirm.css")
+    @WStyles.Render("/css/themify-icons.css", "{assetpath}LeftNav-Docs/idserver.css")
+    @WStyles.Render("{assetpath}fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css")
+    @WStyles.Render("{assetpath}fonts/webcoreFont/style.css")
+
+    @WStyles.Render("{assetpath}leftnav-docs/animate.css")
+
+    @WStyles.Render("{assetpath}LeftNav-Docs/techdocs.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/footer.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/wc-dropdwn.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/wc-feedback.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/wc-feedbackbtn.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/search.css")
+    @WStyles.Render("{assetpath}leftnav-docs/prism/prism-dark.css")
+    @WStyles.Render("{assetpath}LeftNav-Docs/leftnav.css", "{assetpath}LeftNav-Docs/leftnav-mob.css")
+    @RenderSection("styles", required: false)
+
+
+    <link href="~/js/jqueryUi/jquery-ui.css" rel="stylesheet" />
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQYL8PH70B"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-XQYL8PH70B');</script>
+
+</head>
+<body id="wc">
+
+
+    <div id="cmserrpn">
+        <div class="pnclose">
+            <a href="#" onclick="closeErr('#cmserrpn');"><i class="fa fa-times-circle fa1x"></i></a>
+        </div>
+        <div id="errDet" class="err">
+
+        </div>
+    </div>
+
+    <div>
+
+
+    </div>
+
+    <div id="wrapper2">
+        <div class="topnav">
+            <div class="nav-div mob-show-inline">
+                <a class="" href="/">
+
+                    <div class="cmstitle">
+
+                        <i title="webcore solutions " alt="webcore solutions" class="icon-hex-logo"></i>
+                        <span>  webcore</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-div float-right nav-pushrt mob-hide">
+
+                @RenderSection("Searchbar", required: false)
+            </div>
+            <div class="mnuBtnRt mob-show">
+                <button id='trigger2' class="mnuBtn-wt" onclick="sideMenu('toggle');">
+                    <i class="icon-menu"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <form id="home" method="post">
+            @Html.AntiForgeryToken()
+
+
+           
+
+            <div id="cmsconfpn" class="vaconfpn animated fadeInDown">
+                <div id="confDet" class="conf">
+                    <i class="fa fa-check-circle"></i>
+                    Saved Successfully.
+                </div>
+            </div>
+
+
+
+            <div id="container" class="">
+
+                <div id="sdmenu" class="leftpn">
+
+                    <div class="navbar-left " role="navigation">
+
+
+                        <div id="sideNav" class="sidebar-nav">
+                            <div id="mobhdr" class="">
+                                <a class="" href="/">
+
+                                    <div class="cmstitle cmslogo-top">
+
+                                        <i title="webcore solutions " alt="webcore solutions" class="icon-hex-logo"></i>
+                                        <span>  webcore</span>
+                                    </div>
+                                </a>
+
+                            </div>
+
+
+                            <div class="sideNav-wrapper">
+                                <div id="pnfilter" class="pd-15">
+                                    <div class="form-group mb-0">
+                                        <div class="input-filter">
+                                            <input class="form-control pdicon" type="search" placeholder="filter" value="" id="navfilter" />
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                @RenderSection("navigation", required: false)
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div id="lnav" class="container-fluid lnav-content inHeight">
+
+                    <div id="tbcontent" class="">
+
+                        <div class="pull-right pointer" onclick="pgIndexToggle();"><i id="pin" class="ti-pin-alt"></i></div>
+                        <div id="tbrtpn">
+                            <span class="tchdr">
+                                <i class="ti-menu-alt va-middle"></i>
+                                On this page
+                            </span>
+                            <div>
+                                <ul id="tb-pgindex">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rtpush" class="rtpush">
+                        <div class="">
+                            <div class="row">
+                                <div class="col-12 pl-10 pr-10 mt-50">
+                                    <div class="bannertron banner-wt" id="myndc">
+                                        <div id="techhdr" class=" plr-0">
+                                            <div class="row">
+                                                <div class="col-md-9 col-sm-12 plr-0">
+
+                                                    <div id="title-h1">
+                                                        <h1 noindex="1" class="inline-blk mb-1">
+                                                            <span id="title">
+                                                                @ViewBag.Title
+                                                            </span>
+                                                        </h1>
+
+
+                                                    </div>
+                                                    <div id="subtitle-h2">
+                                                        <h2 noindex="1" class="">
+                                                            <span id="subtitle">@ViewBag.subTitle</span>
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                                <!--revisions-->
+                                                <div class="col-md-3 col-sm-12 plr-0 mob-hide">
+
+                                                    <div class="row">
+                                                        <div class="col-12 plr-0 ">
+
+                                                            <div id="btn-grp" class="btn-group float-md-right float-lg-right float-xl-right">
+
+                                                                <div id="pgindex" class="smlx pr-15 pt-6x">
+                                                                    <ul class="wc-dropdown nocaret">
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <i class="ti-menu-alt va-middle"></i>
+                                                                            </a>
+                                                                            <ul class="wc-dropdown-menu mnpos">
+                                                                                <li>
+                                                                                    <div class="pd-15">
+                                                                                        <h6 class="bold">Page Index</h6>
+
+                                                                                        <ul id="pgidx" class="pgidx-ul">
+                                                                                        </ul>
+
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+
+
+
+                                                                @if (User.Identity.IsAuthenticated)
+                                                                {
+                                                                    <div class="smlx pr-15 pt-6x">
+                                                                        <ul id="emlpn" class="wc-dropdown nocaret">
+
+                                                                            <li>
+                                                                                <a href="#">
+                                                                                    <i class="ti-email va-middle"></i>
+                                                                                </a>
+
+                                                                                <ul class="wc-dropdown-menu wc-mt-10">
+                                                                                    <li>
+                                                                                        <div class="pd-15" id="emlsharepn">
+                                                                                            <h5>Share Page</h5>
+
+                                                                                            <span class="sml">eMail</span>
+                                                                                            <input type="text" class="form-control ctrlthin" name="emlshare" id="emlshare" placeholder="Recipient email" />
+                                                                                            <br />
+                                                                                            <textarea rows="3" name="eml-comment" id="eml-comment" maxlength="500" placeholder="Add a message" class="form-control smlx" style="height: 76px;"></textarea>
+                                                                                            <div class="mt-10">
+                                                                                                <div id="eml-msg" class="grn" style="display:none;">Message Sent</div>
+                                                                                                <button type="button" role="button" class="btn btn-thin pull-right" onclick="sharepage();">Send</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="pd-15" id="pnloader">
+
+                                                                                            <img src="/img/loader.svg" class="pnloaderImg" />
+
+                                                                                        </div>
+
+                                                                                    </li>
+
+                                                                                </ul>
+
+
+                                                                            </li>
+
+
+                                                                        </ul>
+
+
+
+                                                                    </div>
+                                                                }
+
+                                                                @if (ViewBag.docpath != null && ViewBag.docpath != "")
+                                                                {
+                                                                    <div id="breadcrumb" class="smlx pr-15 pt-6x">
+                                                                        <a href="@ViewBag.docpath" onclick="copyLink('@ViewBag.docpath')" title="Open & Copy Link to Clipboard">
+                                                                            <i class="ti-share "></i>
+                                                                        </a>
+                                                                    </div>
+                                                                }
+
+
+
+
+                                                                @RenderSection("Revision", required: false)
+
+
+
+                                                            </div>
+
+
+
+
+
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row d-none d-sm-none d-md-flex d-lg-flex">
+                                                <div class="col-9 pl-0 ">
+                                                    <div id="lastupd">
+
+
+                                                        <div class="infopn">
+                                                            <div id="lastupd">
+
+
+
+                                                                @RenderSection("LastUpdate", required: false)
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 pr-0">
+                                                    <div class="row">
+                                                        <div class="col-12 plr-0 pt-10">
+                                                            @*<div id="pg-feedback-lnk" class="smxb pull-right">
+                                                        <a href="#" onclick="feedbck()" title="Give Page Feedback">
+                                                            <i class="ti-thumb-up fa-gry"></i> Feedback
+                                                        </a>
+                                                    </div>*@
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="content-pad">
+
+                            <div id="rsView">
+
+                                @RenderBody()
+                            </div>
+                        </div>
+
+                        <div id="pnView" class="overlay content-pad" style="display:none">
+
+                        </div>
+
+
+                    </div>
+                    <footer class="sticky-footer2">
+                        <div id="myfooter">
+
+                        </div>
+                    </footer>
+
+                    <div class="cmsfooter-wt bg-lgrey text-center">
+                        <div>
+                            <div>
+                                <p>
+
+                                    powered by <i class="icon-hex-logo"></i> webcore cmx
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="rt-menu">
+
+                </div>
+            </div>
+            <input id="pgId" name="pgId" type="hidden" value="@ViewBag.pgId" />
+            <input id="uqId" name="uqId" type="hidden" value="@ViewBag.uniqueId" />
+
+            <div id="pnPU" class="overlay animated fadeIn ">
+                <div id="pnPUC" class="fbpan animated slideInRight">
+
+                </div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+    <form id="account" method="post" action="/Account/LogOff">
+    </form>
+
+
+    <div id="ldrpan" class="loader-pg hide">
+
+    </div>
+
+
+    <div id="loadr" class="nldrpn-lftn-pn  animated fadeIn hide">
+
+        <div class="nldrspan-svg">
+            <h1 noindex="1">Loading...</h1>
+            <svg role="img"
+                 width="100%"
+                 height="700"
+                 aria-labelledby="loading-aria"
+                 viewBox="0 0 600 800"
+                 preserveAspectRatio="none">
+                <title id="loading-aria">Loading...</title>
+                <rect x="0"
+                      y="0"
+                      width="100%"
+                      height="100%"
+                      clip-path="url(#clip-path)"
+                      style='fill: url("#fill");'></rect>
+                <defs>
+                    <clipPath id="clip-path">
+                        <rect x="0" y="53" rx="3" ry="3" width="565" height="9" />
+                        <rect x="0" y="68" rx="3" ry="3" width="568" height="9" />
+                        <rect x="0" y="88" rx="3" ry="3" width="178" height="10" />
+                        <rect x="2" y="107" rx="0" ry="0" width="568" height="110" />
+                        <rect x="439" y="115" rx="0" ry="0" width="0" height="1" />
+                        <rect x="-12" y="3" rx="0" ry="0" width="471" height="33" />
+                        <rect x="0" y="229" rx="3" ry="3" width="568" height="9" />
+                        <rect x="-1" y="245" rx="3" ry="3" width="568" height="9" />
+                        <rect x="-6" y="265" rx="3" ry="3" width="178" height="11" />
+                        <rect x="-2" y="290" rx="3" ry="3" width="574" height="9" />
+                        <rect x="-3" y="306" rx="3" ry="3" width="574" height="9" />
+                        <rect x="3" y="381" rx="3" ry="3" width="574" height="9" />
+                        <rect x="3" y="396" rx="3" ry="3" width="574" height="9" />
+                        <rect x="5" y="416" rx="3" ry="3" width="178" height="10" />
+                        <rect x="4" y="439" rx="0" ry="0" width="568" height="110" />
+                        <rect x="1" y="325" rx="3" ry="3" width="574" height="9" />
+                        <rect x="-1" y="344" rx="3" ry="3" width="574" height="9" />
+                        <rect x="-1" y="564" rx="3" ry="3" width="574" height="9" />
+                        <rect x="-1" y="579" rx="3" ry="3" width="574" height="9" />
+                        <rect x="1" y="599" rx="3" ry="3" width="178" height="10" />
+                    </clipPath>
+                    <linearGradient id="fill">
+                        <stop offset="0.599964"
+                              stop-color="#f3f3f3"
+                              stop-opacity="1">
+                            <animate attributeName="offset"
+                                     values="-2; -2; 1"
+                                     keyTimes="0; 0.25; 1"
+                                     dur="2s"
+                                     repeatCount="indefinite"></animate>
+                        </stop>
+                        <stop offset="1.59996"
+                              stop-color="#ecebeb"
+                              stop-opacity="1">
+                            <animate attributeName="offset"
+                                     values="-1; -1; 2"
+                                     keyTimes="0; 0.25; 1"
+                                     dur="2s"
+                                     repeatCount="indefinite"></animate>
+                        </stop>
+                        <stop offset="2.59996"
+                              stop-color="#f3f3f3"
+                              stop-opacity="1">
+                            <animate attributeName="offset"
+                                     values="0; 0; 3"
+                                     keyTimes="0; 0.25; 1"
+                                     dur="2s"
+                                     repeatCount="indefinite"></animate>
+                        </stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+
+        </div>
+    </div>
+
+
+
+    <div id="scrollTop" class="scTop" onclick="ScrollTop();">
+
+        <i class="far fa-caret-square-up fa-3x"></i>
+    </div>
+
+
+
+
+    @WScripts.Render("{assetpath}LeftNav-Docs/jQuery/jquery-3.6.0.js")
+    @WScripts.Render("{assetpath}LeftNav-Docs/magnifyImg/jquery.magnific-popup.js")
+
+    @WScripts.Render("{assetpath}bootstrap/bootstrap.bundle.js")
+    @WScripts.Render("{assetpath}LeftNav-Docs/jquery.slidereveal.js")
+
+    @WScripts.Render("{assetpath}LeftNav-Docs/navigation.js")
+
+    @WScripts.Render("{assetpath}LeftNav-Docs/hammer.min.js", "{assetpath}LeftNav-Docs/validation.js")
+
+
+    @WScripts.Render("{assetpath}LeftNav-Docs/ajxmod.js?v=2", "{assetpath}leftnav-docs/modal/jquery-confirm.js")
+    @WScripts.Render("{assetpath}LeftNav-Docs/search.js", "{assetpath}LeftNav-Docs/menu.js")
+    @WScripts.Render("{assetpath}LeftNav-Docs/prism/prism.js")
+    @WScripts.Render("{assetpath}LeftNav-Docs/snippets.js")
+
+    @WScripts.Render("{assetpath}LeftNav-Docs/wc-feedback.js")
+    @WScripts.Render("/js/idserver.js")
+
+    @WStyles.Render("{assetpath}LeftNav-Docs/magnifyImg/magnific-popup.css")
+    <script src="~/Scripts/moment.min.js"></script>
+
+    <scriptsection>
+        @RenderSection("scripts", required: false)
+    </scriptsection>
+
+
+    <script>
+        $(function () {
+
+            loadvwpart('/viewpart/web/footer', '#myfooter');
+
+
+
+        });
+    </script>
+    <div>
+        <div id="fbContainer" class="fbContainer">
+            <div class="MinimizedWidgetMiddle__container MinimizedWidgetMiddle__right">
+
+                <button class="MinimizedWidgetMiddle__label" type="button" onclick="feedbck();">
+                    <div class="MinimizedWidgetMiddle__text">Feedback</div><div class="MinimizedWidgetMiddle__emotionIcon">
+                        <div class="EmotionIconDefault__iconEmotionDefault">
+                            <span class="EmotionIconDefault__commentIcon EmotionIconDefault__invert">
+                                <i class="ti-comments-smiley"></i>
+                            </span>
+                            <span class="EmotionIconDefault__expressionIcon EmotionIconDefault__invert"></span>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,409 @@
+
+.fa-fw-ba {
+    text-align: center;
+    width: 0.75em;
+    vertical-align: middle;
+}
+
+
+.mainPicSlide {
+    margin: 0 auto;
+    background-color: #2d2d2d;
+    background-size: cover;
+    height: 350px;
+    background-repeat: no-repeat;
+    width: 100%;
+    z-index: 0;
+}
+
+.pattern2 {
+    margin: 0 auto;
+    background-image: url('../img/pattern-2.png');
+    height: 100%;
+}
+
+#fpslides{
+    color:white;
+}
+
+.banner-ndc-dev {
+    background: url(/hub/img/banner-tech-image.jpg) no-repeat;
+    background-position: right;
+    background-size: cover;
+    align-items: center;
+}
+
+.pattern2 {
+    background-image: url(/img/pattern-2.png);
+    background-image: none;
+    background-size: 6px;
+    background-color: #fff;
+} 
+
+#srchtop {
+    background-color: #3333330a;
+}  
+
+
+.banner-cert-mn {
+    background: url(/hub/img/banner-cert-mn.jpg) no-repeat;
+    background-position: right;
+    background-size: cover;
+    align-items: center;
+}
+
+.banner-cert-pb {
+    background: url(/hub/img/banner-tech.jpg) no-repeat;
+    background-position: right;
+    background-position-x: initial;
+    background-position-y: -80px;
+    background-size: cover;
+    align-items: center;
+}
+
+.banner-frm-pb {
+    background: linear-gradient(rgba(1, 9, 29, 0.55), rgba(1, 9, 29, 0.55) ),
+    url(/hub/img/banner-tech-trade.jpg) no-repeat;
+    background-position: right;
+    background-position-x: initial;
+   /* background-position-y: -480px;*/
+    background-size: cover;
+    align-items: center;
+}
+
+.banner-news-image {
+    background: linear-gradient(rgba(21, 47, 112, 0.40), 
+    rgba(10, 34, 95, 0.18) ), url(/hub/img/BA_News_Banner.jpg) no-repeat;
+    background-position: right;
+    background-position-x: initial;
+    background-position-y: -136px;
+    background-size: cover;
+    align-items: center;
+}
+
+.banner-register {
+    background: linear-gradient(rgba(21, 47, 112, 0.40), rgba(10, 34, 95, 0.18) ), url(/hub/img/BA_Registration_Banner2.jpg) no-repeat;
+    background-position: right;
+    background-position-x: initial;
+    /*background-position-y: -350px;*/
+    background-size: cover;
+    align-items: center;
+    padding: 30px;
+}
+
+
+/*.banner-srch-pb {
+    background: linear-gradient(rgba(92, 84, 109, 0.32),rgba(160, 137, 72, 0.32)), 
+        url(/hub/img/BA_support_Banner.jpg) no-repeat;*/
+    /* background-position: right; */
+    /*background-position-x: initial;
+    background-position-y: -143px;*/
+    /* background-size: cover; */
+    /*align-items: center;
+}*/
+
+.banner-srch-pb {
+    background: linear-gradient(rgba(92, 84, 109, 0.0),rgba(160, 137, 72, 0.0)), url(/hub/fpimgs/fp6.jpg) no-repeat;
+    background-position-y: -678px;
+    background-size: cover;
+    align-items: center;
+}
+
+.banner-trade-pb {
+    background: linear-gradient(rgba(92, 84, 109, 0.0),rgba(160, 137, 72, 0.0)), url(/hub/img/BA_Registration_Banner.jpg) no-repeat;
+    background-position-y: -278px;
+    background-size: cover;
+    align-items: center;
+}
+
+.banner-ticket-pb {
+    background: linear-gradient(rgba(1, 9, 29, 0.55), rgba(1, 9, 29, 0.55) ), url(/hub/img/trade/760x160-boarding-pass.jpg) no-repeat;
+    background-position: right;
+    background-position-x: initial;
+    background-size: cover;
+    align-items: center;
+}
+
+
+
+/*.fp-banner-image {
+    background: url(../img/25.png) #0b52d570 no-repeat;
+    background-position: right;
+    background-size: cover;
+    align-items: center;
+      background-blend-mode: hard-light;
+}*/
+
+.fp-banner-image {
+    background: url(../img/img26.jpg) #184fc1e0 no-repeat;
+    background-position: right;
+    background-size: cover;
+    align-items: center;
+    background-blend-mode: hard-light;
+}
+
+
+
+.fp-banner-image2 {
+    background: url('../img/24.png') no-repeat;
+    background-position: right;
+    background-size: cover;
+    align-items: center;
+    background-color: #25252a;
+}
+
+.fp-banner-image h2 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.bannertron {
+    padding: 20px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+    color: white;
+    background-color: #eae9e985;
+}
+
+
+.btnblu {
+    background-color: #25314d;
+    border-radius: 0;
+    color: #fff;
+}
+
+.crv-bannerbtn {
+    width: 100%;
+    height: 170px;
+    border: 1px solid #ccc;
+    /*    background-image: url(/hub/img/ndccredit_bg.png);*/
+    background: linear-gradient(rgba(16, 48, 80, 0.52),rgba(48, 86, 125, 0.32)),url(/hub/img/ndccredit_bg.png) no-repeat;
+}
+
+.crv-bannerbtn:hover {
+    
+    background: linear-gradient(rgba(16, 48, 80, 0.79),rgba(48, 86, 125, 0.69)),url(/hub/img/ndccredit_bg.png) no-repeat;
+}
+
+
+.crv-bannerbtn-txt {
+    position: absolute;
+    padding: 10%;
+    padding-left: 12%;
+    color: #fff;
+    top: 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+.crv-bannerbtn-txt i {
+        font-size:45px;
+ }
+
+    .crv-bannerbtn-txt:hover {
+    color: #fff;
+    text-shadow: 2px 2px 2px #444;
+}
+
+
+.crv-bannerbtn span {
+    font-size: 240%;
+}
+
+.crv-pd-0{
+    padding:0!important;
+}
+
+@media (max-width:920px) {
+    .bannertron {
+        background-position-y: 0!important;
+    }
+
+}
+
+
+/*.pattern:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 414px;
+    background: #086fd9;*/
+    /* background: #291734; */
+    /* background: #2c2052; */
+    /*opacity: 0.27;
+    display: block;
+}*/
+
+
+@media (max-width: 640px){
+
+    .crv-bannerbtn span {
+        font-size: 200%;
+    }
+
+    .crv-bannerbtn-txt {
+        padding-left: 20%;
+    }
+
+    .crv-bannerbtn-txt i {
+        font-size: 40px;
+    }
+   /* .bannertron{
+        display:none;
+    }
+    .bannermob{
+        display:block;
+    }*/
+    .leftpn{
+        float:none;
+    }
+ }
+
+
+@media (min-width: 648px) and (max-width: 1024px){
+
+
+    .crv-bannerbtn-txt i {
+        display:none;
+    }
+    .crv-bannerbtn-txt {
+         padding:0;
+    }
+
+    .crv-bannerbtn span {
+        font-size: 172%;
+    }
+    .crv-bannerbtn {
+              height: 120px;
+      
+    }
+}
+
+
+
+.backstretch-item {
+  
+}
+
+
+
+
+
+#myndc .panel:hover {
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 9px 0 #cccccc;
+    -webkit-box-shadow: 0px 0px 9px #cccccc;
+    -moz-box-shadow: 0px 0px 9px #cccccc;
+    border-top: 1px dotted #b1bdc7;
+}
+
+#myndc .panel {
+    background-color: #1c1923ad;
+    height: 100%;
+}
+
+#myndc .panel-default {
+    border-color: #dddddd;
+}
+
+.fptitle {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 3px 2px 10px #a59bc1;
+    font-family: 'Quicksand';
+}
+
+.navbar-nav {
+    flex-direction: initial;
+}
+
+.row .fptitle {
+    justify-content: center;
+}
+
+#myndc .fptitle.h1, .fptitle.h4 {
+        text-shadow: 2px 2px 5px rgba(40, 40, 40, 0.65);
+    }
+
+
+
+#myndc .th {
+    width: 70px;
+    margin:auto;
+}
+
+    #myndc .th.step2 {
+        width: 101px;
+        margin-top: 20px;
+    }
+    #myndc .th.step3 {
+        width: 52px;
+        
+    }
+    
+    #myndc .imgp {
+    height: 70px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#mmbanner .banner-alert1 {
+    padding: 0 0 5px 0;
+    background-color: #b52323;
+    color: white;
+    margin:0;
+}
+
+.homebanner {
+    border-top: 1px solid #a7a7a7;
+    /* background-color: #292b2f8a; */
+    border-bottom: 1px solid #cdcdcd;
+    /*background-color: #34343459;*/
+    background-color: rgba(32, 32, 38, 0.30);
+    padding: 7px;
+     position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/*#myndc h1,h2,h4 {
+    text-shadow: 2px 2px 5px rgba(40, 40, 40, 0.65);
+}*/
+
+.col-ml-12{
+    margin-left:0;
+}
+
+@media (min-width: 994px){
+
+
+    .col-ml-12 {
+        margin-left: 12%;
+    }
+
+   
+ }
+
+@media (max-width: 992px) {
+    #mmbanner .homebanner {
+        position: relative;
+    }
+
+    .fp-banner-image:before {
+        height: 370px;
+    }
+
+    .main-content {
+        margin-top: 60px;
+    }
+}
