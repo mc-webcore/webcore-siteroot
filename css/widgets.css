@@ -388,7 +388,8 @@ code {
     background-size: 18px 13px;
     background-repeat: repeat-y;
 }
-
+.mt-10{ margin-top:10px;}
+.mb-10{ margin-bottom:10px;}
 .mt-30{ margin-top:30px;}
 .mb-30{ margin-bottom:30px;}
 
